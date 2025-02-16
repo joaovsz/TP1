@@ -38,15 +38,17 @@ def main():
         trie.insert(word)
 
     print("Palavras disponíveis:", words)
+    prefix = ""
     while True:
-        prefix = input("Digite um prefixo para autocompletar (ou 'sair' para encerrar): ")
-        if prefix.lower() == 'sair':
+        char = input("Digite um caractere para autocompletar (ou 'sair' para encerrar): ")
+        if char.lower() == 'sair':
             break
+        prefix += char
         suggestions = trie.autocomplete(prefix)
         if suggestions:
-            print("Sugestões:", suggestions)
+            print(f"Sugestões para '{prefix}':", suggestions)
         else:
-            print("Nenhuma sugestão encontrada.")
+            print(f"Nenhuma sugestão encontrada para '{prefix}'.")
 
 if __name__ == "__main__":
     main()
