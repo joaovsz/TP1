@@ -21,7 +21,6 @@ class MaxHeap(MinHeap):
             self.heap[i], self.heap[largest] = self.heap[largest], self.heap[i]
             self._heapify_down(largest)
 
-# Testando com o array fornecido
 heap = MaxHeap()
 for val in [50, 30, 40, 10, 20, 35]:
     heap.insert(val)
